@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fgimenez/orientdb-cookbook.png)](https://travis-ci.org/fgimenez/soa-tools-cookbook)
+[![Build Status](https://travis-ci.org/fgimenez/soa-tools-cookbook.png)](https://travis-ci.org/fgimenez/soa-tools-cookbook)
 
 SOA Governance Tools Cookbook
 =================
