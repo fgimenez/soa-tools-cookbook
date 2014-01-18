@@ -8,12 +8,14 @@ describe 'soa_tools::wso2_registry' do
   let(:tarball_file_base) {"wso2greg-#{version}"}
   let(:tarball_file) {"#{tarball_file_base}.tar.gz"}
   let(:tarball_file_path) {"#{base_install_dir}/#{tarball_file}"}
+  let(:init_script) {'init_script'}
   
   let(:runner) do
     runner = ChefSpec::Runner.new do |node|
       node.set[described_cookbook]['wso2_registry_install_dir'] = install_dir
       node.set[described_cookbook]['wso2_registry_tarball_url'] = tarball_url
       node.set[described_cookbook]['wso2_registry_version'] = version
+      node.set[described_cookbook]['wso2_registry_init_script'] = init_script
     end
     runner.converge(described_recipe)
   end
@@ -45,7 +47,7 @@ describe 'soa_tools::wso2_registry' do
     expect(runner).to create_template("/etc/init.d/wso2_registry").
                        with(variables: {install_dir: install_dir,
                                         script_name: 'wso2_registry',
-                                        init_script: './bin/wso2server.sh'},
+                                        init_script: init_script},
                             source: "generic_init_script.erb",
                             mode: "0755")
   end

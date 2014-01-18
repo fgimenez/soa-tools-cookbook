@@ -63,7 +63,7 @@ start() {
     ulimit -c unlimited
     echo -n $"Starting $prog: "
     cd $HOME
-    nohup su $USER -c "<%=@init_script%>" > ./logs/<%=@script_name%>.out 2> ./logs/<%=@script_name%>.err < /dev/null &
+    nohup su $USER -c "<%=@init_script%>" >> ./logs/<%=@script_name%>.out 2>> ./logs/<%=@script_name%>.err < /dev/null &
     RETVAL=$?
     [ $RETVAL -eq 0 ] && echo_success
     [ $RETVAL -ne 0 ] && echo_failure

@@ -28,7 +28,7 @@ template "/etc/init.d/wso2_registry" do
   mode "0755"
   variables({install_dir: node['soa_tools']['wso2_registry_install_dir'],
              script_name: 'wso2_registry',
-             init_script: './bin/wso2server.sh'})
+             init_script: node['soa_tools']['wso2_registry_init_script']})
 end
 
 service 'wso2_registry' do
