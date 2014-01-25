@@ -6,7 +6,7 @@ This cookbook has recipes to install the following SOA Governance Tools:
 
 * WSO2 Registry (http://docs.wso2.org/display/Governance460)
 * TODO: WSO2 User Engagement Server (http://docs.wso2.org/display/UES100)
-* TODO: Bamos Server (https://code.google.com/p/ossoagov/)
+* TODO: WSO2 Business Activity Monitor (http://docs.wso2.org/display/BAM240)
 
 Requirements
 ------------
@@ -17,8 +17,8 @@ Recipes
 -------
 * default: Installs all the SOA tools
 * wso2_registry: Installs WSO2 registry
+* TODO: wso2_bam: Installs WSO2 business activity monitor
 * TODO: wso2_gadget_server: Installs WSO2 gadget server
-* TODO: bamos_server: Installs BAMOS server
 
 Attributes
 ----------
