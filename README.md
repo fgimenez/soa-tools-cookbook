@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/fgimenez/soa-tools-cookbook.png)](https://travis-ci.org/fgimenez/soa-tools-cookbook)
 
-SOA Governance Tools Cookbook
+SOA Tools Cookbook
 =================
-This cookbook has recipes to install the following SOA Governance Tools:
+This cookbook has recipes to install the following SOA Tools:
 
 * WSO2 Registry (http://docs.wso2.org/display/Governance460)
 * TODO: WSO2 User Engagement Server (http://docs.wso2.org/display/UES100)
