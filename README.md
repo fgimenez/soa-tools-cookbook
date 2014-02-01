@@ -24,9 +24,9 @@ Recipes
 Attributes
 ----------
 %w[wso2greg wso2bam wso2ues wso2is].each do |component|
-* node['soa_tools']["#{component}_install_dir"]: installation directory for ```component```
+* node['soa_tools']["#{component}\_install_dir"]: installation directory for ```component```
 * node['soa_tools']["#{component}_version"]: Version of ```component``` to install
-* node['soa_tools']["#{component}_tarball_url"]: URL to get the ```component``` binaries
+* node['soa_tools']["#{component}\_tarball_url"]: URL to get the ```component``` binaries
 
 end
 
