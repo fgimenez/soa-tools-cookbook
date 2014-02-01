@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
     #chef.rest_timeout = 86400
     chef.json = {
-      run_list: ["recipe[soa_tools]"]
+      run_list: ["recipe[soa_tools::wso2greg]"]
     }
   end
 end

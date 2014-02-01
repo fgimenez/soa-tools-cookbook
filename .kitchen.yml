@@ -15,5 +15,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[soa_tools::default]
+      - recipe[soa_tools::wso2greg]
     attributes:
