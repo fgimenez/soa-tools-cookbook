@@ -27,6 +27,7 @@ Attributes
 * node['soa_tools']["#{component}_install_dir"]: installation directory for ```component```
 * node['soa_tools']["#{component}_version"]: Version of ```component``` to install
 * node['soa_tools']["#{component}_tarball_url"]: URL to get the ```component``` binaries
+
 end
 
 Running the tests
