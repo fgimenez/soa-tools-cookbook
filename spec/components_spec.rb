@@ -20,6 +20,10 @@ require_relative 'spec_helper'
       runner.converge(described_recipe)
     end
     
+    it "includes the apt recipe" do
+      expect(runner).to include_recipe('apt')
+    end
+
     it "includes the java::default recipe" do
       expect(runner).to include_recipe('java::default')
     end

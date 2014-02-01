@@ -1,3 +1,4 @@
+include_recipe 'apt'
 include_recipe 'java::default'
 
 soa_tools_component 'wso2is' do
