@@ -10,7 +10,7 @@
       "locked_version": "1.17.6"
     },
     "windows": {
-      "locked_version": "1.10.0"
+      "locked_version": "1.9.0"
     },
     "chef_handler": {
       "locked_version": "1.1.4"

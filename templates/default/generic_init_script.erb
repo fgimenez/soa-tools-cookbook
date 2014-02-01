@@ -63,7 +63,7 @@ start() {
     ulimit -c unlimited
     echo -n $"Starting $prog: "
     cd $HOME
-    nohup su $USER -c "<%=@init_script%>" >> ./logs/<%=@script_name%>.out 2>> ./logs/<%=@script_name%>.err < /dev/null &
+    nohup su - $USER -c "$HOME/<%=@init_script%>" >> ./logs/<%=@script_name%>.out 2>> ./logs/<%=@script_name%>.err < /dev/null &
     RETVAL=$?
     [ $RETVAL -eq 0 ] && echo_success
     [ $RETVAL -ne 0 ] && echo_failure
@@ -73,7 +73,7 @@ start() {
 
 stop() {
     echo $"Stopping $prog: "
-    for pgid in `ps ax -o  "pid pgid args" | \grep .[/]bin/kafka-server-start.sh | awk '{print $2}'`; do
+    for pgid in `ps ax -o  "pid pgid args" | \grep '<%=@init_script%>' | awk '{print $2}'`; do
         for pid in `ps ax -o  "pid pgid args" | \grep -E $"[0-9]+ +$pgid +" | \grep java | awk '{print $1}'`; do
             echo -n $"Stopping $prog($pid): "
             kill $pid

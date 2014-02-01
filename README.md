@@ -5,8 +5,9 @@ SOA Tools Cookbook
 This cookbook has recipes to install the following SOA Tools:
 
 * WSO2 Registry (http://docs.wso2.org/display/Governance460)
-* TODO: WSO2 User Engagement Server (http://docs.wso2.org/display/UES100)
-* TODO: WSO2 Business Activity Monitor (http://docs.wso2.org/display/BAM240)
+* WSO2 User Engagement Server (http://docs.wso2.org/display/UES100)
+* WSO2 Business Activity Monitor (http://docs.wso2.org/display/BAM240)
+* WSO2 Identity Server (http://docs.wso2.org/display/IS460)
 
 Requirements
 ------------
@@ -15,17 +16,17 @@ It has been tested on Ubuntu 12.04, but should work on any platform where Java 1
 
 Recipes
 -------
-* default: Installs all the SOA tools
-* wso2_registry: Installs WSO2 registry
-* TODO: wso2_bam: Installs WSO2 business activity monitor
-* TODO: wso2_gadget_server: Installs WSO2 gadget server
+* wso2greg: Installs WSO2 Governance Registry
+* wso2bam: Installs WSO2 Business Activity Monitor
+* wso2ues: Installs WSO2 User Engagement Server
+* wso2is: Installs WSO2 Identity Server
 
 Attributes
 ----------
-* node['soa_tools']['wso2_registry_install_dir']: insstallation directory for WSO2 Registry
-* node['soa_tools']['wso2_registry_version']: Version of WSO2 Registry to install
-* node['soa_tools']['wso2_registry_tarball_url']: URL to get the WSO2 Registry binaries
-
+%w[wso2greg wso2bam wso2ues wso2is].each do |component|
+* node['soa_tools']["#{component}_install_dir"]: installation directory for ```component```
+* node['soa_tools']["#{component}_version"]: Version of ```component``` to install
+* node['soa_tools']["#{component}_tarball_url"]: URL to get the ```component``` binaries
 
 Running the tests
 -----------------
@@ -43,7 +44,7 @@ For testing the cookbook with Vagrant 1.2+ you just have to execute bootstrap.sh
 
     $ bootstrap.sh
 
-It installs the required Vagrant plugins and launchs the machine. After the process you have a orientdb instance running in ```soa-tools.local``` host, ip 33.33.33.33 (you may need to provide root privileges to allow vagrant-hostmanager do its duty). You may, for example, access the WSO2 Governance Registry Console from https://soa-tools.local:9443/carbon
+It installs the required Vagrant plugins and launchs the machine. After the process you have a carbon instance running in ```soa-tools.local``` host, ip 33.33.33.33 (you may need to provide root privileges to allow vagrant-hostmanager do its duty) with the default component given to the chef-solo provisioner in the ```Vagrantfile```. Then you can access the access the component's Console from https://soa-tools.local:9443/carbon
 
 Contributing
 ------------
