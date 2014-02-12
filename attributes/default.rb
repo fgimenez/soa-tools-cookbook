@@ -3,7 +3,7 @@ default['soa_tools']['tarball_extension'] = '.tar.gz'
 default['soa_tools']['init_script'] = 'bin/wso2server.sh'
 
 default['soa_tools']['wso2greg_version'] = '4.6.0'
-default['soa_tools']['wso2is_version'] = '4.6.0'
+default['soa_tools']['wso2is_version'] = '2.4.0'
 default['soa_tools']['wso2bam_version'] = '2.4.0'
 default['soa_tools']['wso2ues_version'] = '1.0.0'
 
